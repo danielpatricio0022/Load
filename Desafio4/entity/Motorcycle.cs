@@ -1,16 +1,20 @@
-﻿namespace Desafio4.entity;
-
-public class Motorcycle(decimal loadWeight) : Vehicle(loadWeight), CalculateCostI
+﻿namespace Desafio4.entity
 {
-    private const decimal maxCapacity = 100m;
-
-    public override decimal calculateCapacity()
+    public class Motorcycle : Vehicle, CalculateCostI
     {
-        return maxCapacity - loadWeight;
-    }
+        private const decimal MaxCapacity = 100m;
 
-    public decimal calculateTransport(decimal distance)
-    {
-        return (distance * 1.0m) + (loadWeight * 0.05m);
+
+        public Motorcycle(decimal loadWeight) : base(loadWeight, MaxCapacity)
+        {
+            if (loadWeight > MaxCapacity)
+            {
+                throw new ArgumentException("motorcycle cannot have more than max capacity");
+            }
+        }
+        public decimal calculateTransport(decimal distance)
+        {
+            return (distance * 1.0m) + (LoadWeight * 0.05m);//use
+        }
     }
 }

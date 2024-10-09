@@ -1,11 +1,14 @@
-﻿namespace Desafio4.entity;
-
-public class Van(decimal currentLoadWeight) : Vehicle(currentLoadWeight)
+﻿namespace Desafio4.entity
 {
-    private const decimal maxCapacity = 2000m;
-
-    public override decimal calculateCapacity()
+    public class Van : Vehicle
     {
-        return maxCapacity - loadWeight;
+        private const decimal MaxCapacity = 2000m;
+        public Van(decimal loadWeight) : base(loadWeight, MaxCapacity)
+        {
+            if (loadWeight > MaxCapacity)
+            {
+                throw new ArgumentException("van cannot have more than max capacity");
+            }
+        }
     }
 }
