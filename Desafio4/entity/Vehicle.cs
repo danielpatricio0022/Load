@@ -1,16 +1,22 @@
-﻿namespace Desafio4.entity;
-
-public abstract class Vehicle(decimal loadWeight, decimal maxCapacity)//primary constructor
+﻿namespace Desafio4.entity
 {
-    private decimal loadWeight { get;} = loadWeight; //readonly
-    private decimal maxCapacity{ get;} = maxCapacity; //readonly
-
-
-    public virtual decimal calculateCapacity() //virtual nâo precisa ser sobrescrito
+    public abstract class Vehicle
     {
-        return maxCapacity - loadWeight;
-    }
+        private decimal LoadWeight { get; }
+        private decimal MaxCapacity { get; }
 
-    public decimal MaxCapacity => maxCapacity; //access field private get
-    public decimal LoadWeight => loadWeight; //accesss field private get
+        // Construtor
+        protected Vehicle(decimal loadWeight, decimal maxCapacity)
+        {
+            LoadWeight = loadWeight; 
+            MaxCapacity = maxCapacity; 
+        }
+
+        public virtual decimal CalculateCapacity() // virtual nao pode ser sobrescrito
+        {
+            return MaxCapacity - LoadWeight;
+        }
+        
+        public decimal loadWeight => LoadWeight; //accesss field private get
+    }
 }

@@ -14,7 +14,7 @@
         }
         public decimal calculateTransport(decimal distance)
         {
-            return (distance * 1.0m) + (LoadWeight * 0.05m);//use
+            return (distance * 1.0m) + (loadWeight * 0.05m);//use
         }
     }
 }
