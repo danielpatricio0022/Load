@@ -2,10 +2,9 @@
 {
     public abstract class Vehicle
     {
-        private decimal LoadWeight { get; }
-        private decimal MaxCapacity { get; }
-
-        // Construtor
+        private decimal LoadWeight { get; } //readonly
+        private decimal MaxCapacity { get; } //readonly
+        
         protected Vehicle(decimal loadWeight, decimal maxCapacity)
         {
             LoadWeight = loadWeight; 
