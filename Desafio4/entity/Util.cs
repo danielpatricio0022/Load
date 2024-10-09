@@ -4,7 +4,7 @@
     {
         public static void PrintCapacity(Vehicle vehicle)
         {
-            decimal availableCapacity = vehicle.calculateCapacity();
+            decimal availableCapacity = vehicle.CalculateCapacity();
             Console.WriteLine($"{vehicle.GetType().Name.ToLower()} tem capacidade  de {availableCapacity} kg");
         }
 
